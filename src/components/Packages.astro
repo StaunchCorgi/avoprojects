@@ -1,0 +1,90 @@
+---
+import PackageCard from "./PackageCard.astro";
+
+const packages = [
+  {
+    name: "HD Single View",
+    price: "R450",
+    oldPrice: "R499",
+    image: "/images/single-view.png",
+    badge: "POPULAR",
+    description: "Decoder + Dish + Installation",
+    features: [
+      "HD decoder",
+      "Satellite dish",
+      "Standard installation"
+    ]
+  },
+
+  {
+    name: "DStv Explora",
+    price: "Get Quote",
+    image: "/images/explora.png",
+    badge: "",
+    description: "Explora installation & setup",
+    features: [
+      "Explora setup",
+      "Dish installation",
+      "Signal alignment"
+    ]
+  },
+
+  {
+    name: "ExtraView",
+    price: "Get Quote",
+    image: "/images/extraview.png",
+    badge: "",
+    description: "Watch DStv in more rooms",
+    features: [
+      "Extra decoder setup",
+      "ExtraView configuration",
+      "Professional cabling"
+    ]
+  },
+
+  {
+    name: "Signal Repair",
+    price: "Get Quote",
+    image: "/images/signal-repair.png",
+    badge: "",
+    description: "No signal? We'll sort it out.",
+    features: [
+      "Signal testing",
+      "Dish alignment",
+      "Cable inspection"
+    ]
+  }
+];
+---
+
+<section class="packages" id="packages">
+
+  <div class="container">
+
+    <div class="package-heading">
+
+      <div>
+        <span>OUR PACKAGES</span>
+        <h2>What do you need?</h2>
+      </div>
+
+      <p>
+        Tap a package to enquire.
+      </p>
+
+    </div>
+
+
+    <div class="package-grid">
+
+      {
+        packages.map((pkg) => (
+          <PackageCard {...pkg} />
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>

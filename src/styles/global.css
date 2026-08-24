@@ -1,0 +1,533 @@
+:root {
+  --green: #78aF22;
+  --green-dark: #527c15;
+  --green-light: #f2f8e8;
+
+  --black: #151a12;
+  --text: #454b40;
+  --muted: #747b70;
+
+  --white: #ffffff;
+  --background: #f7f8f5;
+  --border: #e5e9e1;
+
+  --container: 1200px;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+img {
+  width: 100%;
+  display: block;
+}
+
+
+.container {
+  width: min(92%, var(--container));
+  margin-inline: auto;
+}
+
+
+/* HEADER */
+
+.site-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+
+.header-inner {
+  height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.logo-icon {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--green);
+  color: white;
+
+  border-radius: 10px;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo-text strong {
+  color: var(--black);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+
+.logo-text span {
+  margin-top: 4px;
+
+  font-size: .58rem;
+  letter-spacing: .18em;
+
+  color: var(--green-dark);
+}
+
+
+.installer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: .82rem;
+  font-weight: 600;
+
+  color: var(--muted);
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  background: var(--green);
+
+  border-radius: 50%;
+}
+
+
+.whatsapp-header {
+  padding: 11px 18px;
+
+  background: var(--green);
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+
+/* INTRO */
+
+.intro {
+  padding: 65px 0 40px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(120, 175, 34, .15),
+      transparent 32%
+    ),
+    white;
+}
+
+
+.intro-badge {
+  display: inline-block;
+
+  padding: 7px 11px;
+
+  background: var(--green-light);
+  color: var(--green-dark);
+
+  border-radius: 50px;
+
+  font-size: .69rem;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+
+.intro h1 {
+  margin-top: 16px;
+
+  max-width: 750px;
+
+  color: var(--black);
+
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: .95;
+
+  letter-spacing: -.06em;
+}
+
+
+.intro h1 span {
+  color: var(--green);
+}
+
+
+.intro p {
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+}
+
+
+/* PACKAGES */
+
+.packages {
+  padding: 30px 0 100px;
+}
+
+
+.package-heading {
+  display: flex;
+
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+
+.package-heading > div > span {
+  color: var(--green);
+
+  font-size: .68rem;
+  font-weight: 800;
+
+  letter-spacing: .12em;
+}
+
+
+.package-heading h2 {
+  margin-top: 4px;
+
+  color: var(--black);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  letter-spacing: -.04em;
+}
+
+
+.package-heading > p {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+
+/* GRID */
+
+.package-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* CARD */
+
+.package-card {
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+
+.package-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--green);
+
+  box-shadow:
+    0 18px 50px rgba(30, 50, 20, .09);
+}
+
+
+/* IMAGE */
+
+.package-image {
+  position: relative;
+
+  height: 220px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8faf5,
+      #eef5e6
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+}
+
+
+.package-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+.package-badge {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  padding: 6px 10px;
+
+  background: var(--green);
+  color: white;
+
+  border-radius: 50px;
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .06em;
+}
+
+
+/* CARD BODY */
+
+.package-body {
+  padding: 22px;
+}
+
+
+.package-body h3 {
+  color: var(--black);
+
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+
+.package-title-row p {
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: .8rem;
+}
+
+
+/* PRICE */
+
+.package-price {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+
+.package-price strong {
+  color: var(--black);
+
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+
+.old-price {
+  color: #9da29a;
+
+  text-decoration: line-through;
+
+  font-size: .85rem;
+}
+
+
+/* FEATURES */
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 19px;
+  margin-bottom: 22px;
+}
+
+
+.package-features > span {
+  color: #555c50;
+
+  font-size: .78rem;
+}
+
+
+.check {
+  color: var(--green);
+
+  margin-right: 5px;
+
+  font-weight: 800;
+}
+
+
+/* BUTTON */
+
+.package-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 15px;
+
+  background: var(--green);
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: .84rem;
+  font-weight: 700;
+
+  transition: .2s;
+}
+
+
+.package-button:hover {
+  background: var(--green-dark);
+}
+
+
+.package-button span {
+  font-size: 1rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+
+  .package-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .installer-status {
+    display: none;
+  }
+
+
+  .header-inner {
+    height: 70px;
+  }
+
+
+  .whatsapp-header {
+    padding: 9px 12px;
+    font-size: .75rem;
+  }
+
+
+  .intro {
+    padding: 45px 0 25px;
+  }
+
+
+  .intro h1 {
+    font-size: 3.3rem;
+  }
+
+
+  .package-heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+
+  .package-heading p {
+    display: none;
+  }
+
+
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .package-image {
+    height: 260px;
+  }
+
+
+  .packages {
+    padding-bottom: 60px;
+  }
+
+}

@@ -1,0 +1,107 @@
+---
+interface Props {
+  name: string;
+  price: string;
+  oldPrice?: string;
+  image: string;
+  badge?: string;
+  description: string;
+  features: string[];
+}
+
+const {
+  name,
+  price,
+  oldPrice,
+  image,
+  badge,
+  description,
+  features
+} = Astro.props;
+
+const whatsappNumber = "27000000000";
+
+const message =
+  `Hi AVO Projects, I'm interested in the ${name} package.`;
+
+const whatsappUrl =
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<article class="package-card">
+
+  <div class="package-image">
+
+    {
+      badge && (
+        <span class="package-badge">
+          {badge}
+        </span>
+      )
+    }
+
+    <img
+      src={image}
+      alt={`${name} DStv installation package`}
+      loading="lazy"
+    />
+
+  </div>
+
+
+  <div class="package-body">
+
+    <div class="package-title-row">
+
+      <div>
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </div>
+
+    </div>
+
+
+    <div class="package-price">
+
+      {
+        oldPrice && (
+          <span class="old-price">
+            {oldPrice}
+          </span>
+        )
+      }
+
+      <strong>
+        {price}
+      </strong>
+
+    </div>
+
+
+    <div class="package-features">
+
+      {
+        features.map((feature) => (
+          <span>
+            <span class="check">✓</span>
+            {feature}
+          </span>
+        ))
+      }
+
+    </div>
+
+
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="package-button"
+    >
+      Select Package
+      <span>→</span>
+    </a>
+
+  </div>
+
+</article>
